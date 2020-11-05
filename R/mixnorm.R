@@ -10,8 +10,10 @@
 #'
 #' @export
 #' @examples MixtureNormal(0.5, 5, 5, 1, 10)
+#' #' You need the suggested package for this function
+
 
 MixtureNormal <- function(p, mu1, mu2, sigma1, sigma2) {
-  U <- rbernoulli(1, p = p)
+  U <- purrr::rbernoulli(1, p = p)
   ifelse(U == 1, rnorm(1, mean = mu1, sd = sigma1), rnorm(1, mean = mu2, sd = sigma2))
 }
